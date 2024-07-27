@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Desarrollador Backend</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tu Nombre</h1>
+            <p>Desarrollador Backend</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Sobre Mí</h2>
+            <p>Descripción breve sobre tu experiencia y habilidades en desarrollo backend.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Proyectos</h2>
+            <div class="project-list">
+                <div class="project">
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción del proyecto 1.</p>
+                </div>
+                <div class="project">
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción del proyecto 2.</p>
+                </div>
+                <!-- Agrega más proyectos según sea necesario -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
