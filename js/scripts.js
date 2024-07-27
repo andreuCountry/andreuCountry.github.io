@@ -4,22 +4,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     esTab.addEventListener('click', (e) => {
         e.preventDefault();
-        switchLanguage('es');
+        translatePage('ES');
     });
 
     enTab.addEventListener('click', (e) => {
         e.preventDefault();
-        switchLanguage('en');
+        translatePage('EN');
     });
 
-    function switchLanguage(lang) {
-        const elements = document.querySelectorAll('[data-lang-es]');
+    async function translatePage(targetLang) {
+        const textsToTranslate = document.querySelectorAll('h1, h2, h3, p, li, a');
+        const apiKey = 'TU_CLAVE_DE_API_DEEPL';
+        const apiUrl = 'https://api-free.deepl.com/v2/translate';
 
-        elements.forEach(el => {
-            const text = el.getAttribute(`data-lang-${lang}`);
-            if (text) {
-                el.textContent = text;
-            }
+        textsToTranslate.forEach(async (element) => {
+            const text = element.textContent;
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `DeepL-Auth-Key ${apiKey}`
+                },
+                body: `text=${encodeURIComponent(text)}&target_lang=${targetLang}`
+            });
+            const data = await response.json();
+            element.textContent = data.translations[0].text;
         });
     }
 });
