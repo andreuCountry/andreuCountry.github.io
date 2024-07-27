@@ -4,10 +4,16 @@ body {
     padding: 0;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
+    text-align: center;
 }
 
 nav ul {
@@ -36,6 +42,18 @@ section {
     margin-bottom: 20px;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
 }
