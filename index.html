@@ -10,14 +10,14 @@
 <body>
     <header>
         <div class="container">
-            <h1 id="name" data-lang-es="Andreu Country" data-lang-en="Andreu Country">Andreu Country</h1>
+            <h1 id="name" data-lang-es="Andreu Sánchez" data-lang-en="Andreu Sánchez">Andreu Sánchez</h1>
             <h2 id="title" data-lang-es="Desarrollador Backend" data-lang-en="Backend Developer">Desarrollador Backend</h2>
             <nav>
                 <ul>
-                    <li>
+                    <li id="language-container">
                         <select id="language-select">
-                            <option value="es" data-image="./images/flag-es.png">Esp</option>
-                            <option value="en" data-image="./images/flag-en.png">Eng</option>
+                            <option value="es" data-image="images/flag-es.png">Esp</option>
+                            <option value="en" data-image="images/flag-en.png">Eng</option>
                         </select>
                     </li>                    
                 </ul>
@@ -46,12 +46,30 @@
     <footer>
         <div class="container">
             <h3 data-lang-es="Contacto" data-lang-en="Contact">Contacto</h3>
+            <h1 data-lang-es="Me encantaria saber mas sobre vosotros." data-lang-en="I would love to know more about you.">Me encantaria saber mas sobre vosotros.</h1>
             <ul>
-                <li><a href="https://www.linkedin.com/in/andreuCountry/" data-lang-es="LinkedIn" data-lang-en="LinkedIn">LinkedIn</a></li>
-                <li data-lang-es="Teléfono: +34 600 000 000" data-lang-en="Phone: +34 600 000 000">Teléfono: +34 600 000 000</li>
-                <li><a href="mailto:andreu@example.com" data-lang-es="Email: andreu@example.com" data-lang-en="Email: andreu@example.com">Email: andreu@example.com</a></li>
+                <li>Linkedin: https://www.linkedin.com/in/andreu-sanchez-castello-8a1590221/</li>
+                <li data-lang-es="Teléfono: +34 671 606 232" data-lang-en="Phone: +34 671 606 232">Teléfono: +34 671 606 232</li>
+                <li>Email: andreu.country.dev@gmail.com</li>
             </ul>
         </div>
     </footer>
 </body>
+
+<script>
+     document.addEventListener('DOMContentLoaded', function () {
+        var languageSelect = document.getElementById('language-select');
+
+        function updateBackground() {
+            var selectedOption = languageSelect.options[languageSelect.selectedIndex];
+            var image = selectedOption.getAttribute('data-image');
+            languageSelect.style.backgroundImage = 'url(' + image + ')';
+        }
+
+        updateBackground();
+
+        languageSelect.addEventListener('change', updateBackground);
+    });
+</script>
+
 </html>
