@@ -7,6 +7,7 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
+    color: #fff;
 }
 
 header {
@@ -22,6 +23,19 @@ nav ul {
     justify-content: center;
     padding: 0;
     margin: 0;
+}
+
+#language-select {
+    background-image: url('images/flag-es.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+}
+
+#language-select option {
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
 }
 
 nav ul li {
